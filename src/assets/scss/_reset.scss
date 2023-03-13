@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border: none;
+    background-color: none;
+    font-family: var(--font-popping);
+    background-color: var(--primary-red);
+    padding: 1.1rem 4.3rem;
+    color: var(--white);
+}
+input{
+    border: none;
+    background-color: none;
+    font-family: var(--font-popping);
+    background-color: var(--primary-red);
+    padding: 1.1rem 2rem;
+    color: var(--white);
+
+}
