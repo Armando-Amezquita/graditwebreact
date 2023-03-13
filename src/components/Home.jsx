@@ -13,7 +13,6 @@ export function Home() {
     }, [])
 
 
-    console.log('discover', discover)
 
   return (
     <div className='container'>

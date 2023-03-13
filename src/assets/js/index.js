@@ -20,16 +20,12 @@ export const getDataTotalProductsSell = async() => {
 
 export const getDataTotalCarrousel = async() => {
     try{
-        
         const data = await fetch(`${URLDISCOVER}`)
             .then(data => data.json())
             .then(res => res)
             .catch(err => console.log(err))
 
         const products = data.products.nodes
-        console.log('products', products)
-        
-        console.log('data', data)
 
         return products;
 

@@ -1,67 +1,32 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import imge from '../assets/img/image3.png'
 import { Cards } from './Cards'
 
-export function Carousel({discover}) {
+export function Carousel() {
+    const URLDISCOVER = `https://gradistore-spi.herokuapp.com/products/all`
+    
+    const [discover, setDiscover] = useState('')
 
-    /* const images = [image1, image2]
-    const [selectIndex, setSelectIndex] = useState(0)
-    const [selectImage, setSelectImage] = useState(images[0]);
-
-    const selectNewImage = (index, image, next = true) => {
-        const condition = next ? selectIndex < images.length - 1 : selectIndex > 0;
-        const nextIndex = next ? (condition ? selectIndex + 1 : 0) : condition ? selectIndex - 1 : image.length -1 
-        setSelectImage(images[nextIndex])  
-        setSelectIndex(nextIndex) 
+    const getDataTotalCarrousel = async() => {
+        try{
+            const data = await fetch(`${URLDISCOVER}`)
+                .then(data => data.json())
+                .then(res => res)
+                .catch(err => console.log(err))
+    
+            const products = data.products.nodes
+    
+            return products;
+    
+        }catch(err){
+            console.log('err', err)
+        }
     }
+    useEffect( () => async() => {
+        setDiscover(await getDataTotalCarrousel())
+    }, [])
 
-    const prev = () => {
-        selectNewImage(selectIndex, images, false)  
-    }
-
-    const next = () => {
-        selectNewImage(selectIndex, images)
-    } */
-    // let span = document.querySelectorAll('.let')
-    // let span2 = document.querySelectorAll('.let2')
-    // let produt = document.getElementsByClassName('.produt')
-    // let productPage = Math.ceil(produt.length/4)
-    // let l = 0
-    // let movePer = 25.34
-    // let maxMove = 203
-
-    // //mobile
-    // let mobileView = window.matchMedia("(max-width: 768px)")
-    // if(mobileView.matches){
-    //     movePer = 50.36
-    //     maxMove = 504
-    // }
-    // let rigthMove = () => {
-    //     l = l + movePer
-    //     if(produt == 1){
-    //         l=0
-    //     }
-    //     for (const i of produt) {
-    //         if(l > maxMove){l = l -movePer}
-    //         i.style.left = '-' + l + '%'
-    //     }
-    // }
-
-    // let leftMove = () => {
-    //     console.log('aqui')
-    //     l = l -movePer
-    //     if(l<=0){l=0}
-    //     for (const i of produt) {
-    //         if(productPage > 1)
-    //         i.style.left = '-' + l + '%'
-    //     }
-    // }
-
-    // console.log('span', span)
-    // // span[1].onclick = () =>{rigthMove()}
-    // // span[1].onclick = () =>{rigthMove()}
-    // span[0].onclick = () =>{leftMove()}
-
+    console.log('discover', discover)
   return (
     <div className='section-product-container'>
         {/* <div>
