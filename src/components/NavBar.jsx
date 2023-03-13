@@ -18,8 +18,6 @@ export function NavBar() {
           <span className='logo-3'></span>
         </div>
         <div>
-          <span>hol</span>
-          <span>hol</span>
           <span className='garbage'></span>
         </div>
         

@@ -1,7 +1,6 @@
 import React from 'react'
 import { listFooter } from '../assets/js'
 import { ListFooter } from './ListFooter'
-import social from '../assets/icons/Vector (2).png'
 
 export function Footer() {
 
@@ -12,7 +11,7 @@ export function Footer() {
     }
     
   return (
-    <footer className='footer'>
+    <footer id='footer' className='footer'>
         <div className='footer-brand'>
             <div className='logo'>
             <span className='logo-1'></span>
@@ -36,9 +35,19 @@ export function Footer() {
                 }
                 <div className='footer-contact'>
                     <p className='footer-contact-title'>Contact</p>
-                <div>
-                    <span> {/* <img src={social} alt="" /> */}</span>
-                    <span></span>
+                <div>   
+                    <span className='social-media'></span>
+                    <span className='social-media'></span>
+                    <p className='footer-social-description'>BRAUZZ. BV // Over de Beek 55, 1840 <br /> Londerzeel // VAT: BE 0747.951.855</p>
+                    <div className='footer-cards'>
+                        <span className='footer-card1'></span>
+                        <span className='footer-card2'></span>
+                        <span className='footer-card3'></span>
+                        <span className='footer-card4'></span>
+                        <span className='footer-card5'></span>
+                        <span className='footer-card6'></span>
+                        <span className='footer-card7'></span>
+                    </div>
                 </div>
             </div>
                 
