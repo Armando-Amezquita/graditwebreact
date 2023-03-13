@@ -28,7 +28,6 @@ export function Cards({image, title, score, minprice, maxprice}) {
     draw()
   }, [setStar])
 
-  console.log(star)
 
   return (
     <div className="produt">
@@ -42,8 +41,8 @@ export function Cards({image, title, score, minprice, maxprice}) {
           <div className='product-details-description'>
             <div className='product-details-description-start'>
               {
-                star.map(e => (
-                  <img src={stella} alt="" />
+                star.map((e, i) => (
+                  <img src={stella} key={i} alt="" />
                 ))
               }
               <span> 
